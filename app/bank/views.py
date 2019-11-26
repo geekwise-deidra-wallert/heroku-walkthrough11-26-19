@@ -1,6 +1,6 @@
 from django.contrib.auth.models import User, Group
 from rest_framework import viewsets
-from bank.serializers import UserSerializer, GroupSerializer
+from main.serializers import UserSerializer, GroupSerializer
 
 class UserViewSet ( viewsets.ReadOnlyModelViewSet ):
     """
@@ -15,4 +15,3 @@ class GroupViewSet ( viewsets.ReadOnlyModelViewSet ):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
-© 2019 GitHub, Inc.
