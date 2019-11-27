@@ -1,6 +1,7 @@
 from django.contrib.auth.models import User, Group
+from bank.models import Branch, Client
 from rest_framework import viewsets
-from main.serializers import UserSerializer, GroupSerializer
+from main.serializers import UserSerializer, GroupSerializer, BranchSerializer, ClientSerializer
 
 class UserViewSet ( viewsets.ReadOnlyModelViewSet ):
     """
@@ -15,3 +16,11 @@ class GroupViewSet ( viewsets.ReadOnlyModelViewSet ):
     """
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
+
+class BranchViewSet ( viewsets.ReadOnlyModelViewSet ):
+    queryset = Branch.objects.all()
+    serializer_class = BranchSerializer
+
+class ClientViewSet ( viewsets.ReadOnlyModelViewSet ):
+    queryset = Client.objects.all()
+    serializer_class = ClientSerializer
